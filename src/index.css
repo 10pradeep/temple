@@ -1,0 +1,495 @@
+:root {
+  /* Mouna Gurunathar Temple - Bright Traditional Tamil Nadu Temple Palette */
+  --color-main-bg: #FFD54F;           /* Golden Yellow Main Background */
+  --color-cream-bg: #FFD54F;          /* Consistent Golden Yellow Canvas */
+  --color-section-bg: #FFE9A8;        /* Warm Light Gold Content Sections */
+  --color-card-bg: #FFE9A8;           /* Warm Light Gold Cards */
+  --color-card-white: #FFFFFF;        /* Clean White for High-Readability Cards */
+  --color-inner-bg: #FFFDF5;          /* Ivory Cream for Inputs & Inner Panels */
+
+  /* Temple Brown for Buttons, Navigation & Primary Accents */
+  --color-temple-brown: #6D3518;      /* Temple Brown */
+  --color-temple-brown-dark: #522710; /* Deep Temple Brown */
+  --color-temple-brown-hover: #82401C;/* Hover Temple Brown */
+
+  /* Golden Borders & Highlights */
+  --color-gold: #D4AF37;              /* Temple Gold */
+  --color-gold-bright: #FFD54F;       /* Golden Yellow */
+  --color-gold-light: #FFE9A8;        /* Warm Light Gold */
+  --color-saffron: #FFA726;           /* Sacred Saffron Accent */
+  --color-border-gold: #C89624;       /* Elegant Golden Border */
+  --color-border-gold-light: #E0BA55; /* Soft Golden Border */
+  --color-border-brown: #6D3518;      /* Temple Brown Border */
+
+  /* Typography & Readable Text */
+  --color-text-main: #3E2114;         /* Dark Brown Primary Text */
+  --color-text-secondary: #58331E;    /* Warm Dark Brown Subtext */
+  --color-text-light: #FFFDF5;        /* Cream Text on Temple Brown */
+  --color-white: #FFFFFF;
+
+  /* Status Colors */
+  --color-success: #1B7A3C;
+  --color-success-bg: #EAF7EE;
+  --color-danger: #B91C1C;
+  --color-danger-bg: #FEE2E2;
+  --color-warning: #B45309;
+  --color-warning-bg: #FEF3C7;
+  --color-unavailable: #4B5563;
+  --color-unavailable-bg: #E5E7EB;
+
+  /* Typography */
+  --font-heading: 'Cinzel', 'Noto Sans Tamil', serif, Georgia;
+  --font-body: 'Outfit', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Subtle Warm Shadows */
+  --shadow-sm: 0 2px 8px rgba(62, 33, 20, 0.08);
+  --shadow-md: 0 6px 18px rgba(62, 33, 20, 0.14);
+  --shadow-lg: 0 12px 32px rgba(62, 33, 20, 0.22);
+  --shadow-gold: 0 4px 18px rgba(212, 175, 55, 0.35);
+  --shadow-card: 0 6px 18px rgba(109, 53, 24, 0.26);
+  --shadow-card-hover: 0 12px 28px rgba(109, 53, 24, 0.38), 0 0 16px rgba(255, 213, 79, 0.45);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--color-main-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-main-bg);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+}
+
+/* Borders & Accents */
+.temple-border {
+  border: 1.5px solid var(--color-border-gold);
+}
+
+.temple-border-gold-glow {
+  border: 1.5px solid var(--color-border-gold);
+  box-shadow: 0 0 12px rgba(255, 213, 79, 0.4);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  color: var(--color-temple-brown);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-main-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-gold);
+  border-radius: 4px;
+  border: 2px solid var(--color-main-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-temple-brown);
+}
+
+/* Interactive Elements */
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+  transition: all 0.22s ease-in-out;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-temple-brown);
+  outline-offset: 2px;
+}
+
+/* Primary Temple Brown Button */
+.btn-temple-primary {
+  background: linear-gradient(135deg, #6D3518 0%, #522710 100%);
+  color: #FFFDF5;
+  border: 1.5px solid var(--color-gold-bright);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(109, 53, 24, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-temple-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #82401C 0%, #6D3518 100%);
+  box-shadow: 0 6px 20px rgba(109, 53, 24, 0.4), 0 0 12px rgba(255, 213, 79, 0.45);
+  color: #FFFDF5;
+}
+
+.btn-temple-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Gold Accent Button */
+.btn-temple-gold {
+  background: linear-gradient(135deg, #FFD54F 0%, #E5A323 100%);
+  color: var(--color-text-main);
+  border: 1.5px solid var(--color-temple-brown);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(109, 53, 24, 0.18);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-temple-gold:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #FFE9A8 0%, #FFD54F 100%);
+  box-shadow: 0 6px 18px rgba(109, 53, 24, 0.28), 0 0 12px rgba(255, 213, 79, 0.4);
+}
+
+/* Secondary Button */
+.btn-temple-secondary {
+  background-color: var(--color-inner-bg);
+  color: var(--color-temple-brown);
+  border: 1.5px solid var(--color-temple-brown);
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-temple-secondary:hover:not(:disabled) {
+  background-color: var(--color-temple-brown);
+  color: #FFFDF5;
+  border-color: var(--color-gold-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(109, 53, 24, 0.25);
+}
+
+/* Form Controls */
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #FFFDF6;
+  border: 1.5px solid var(--color-border-gold);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-temple-brown);
+  box-shadow: 0 0 0 3px rgba(255, 213, 79, 0.45);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Responsive Grid for the 6 Core Modules */
+.module-cards-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 960px) {
+  .module-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .module-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 340px) {
+  .module-cards-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+}
+
+/* Content Section Cards */
+.temple-card {
+  background-color: var(--color-section-bg);
+  border: 1.5px solid var(--color-border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.temple-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), 0 0 12px rgba(212, 175, 55, 0.25);
+  border-color: var(--color-temple-brown);
+}
+
+.temple-card-white {
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Temple Brown Module Cards */
+.module-card-item {
+  background: linear-gradient(145deg, #6D3518 0%, #522710 100%) !important;
+  border: 2px solid #FFD54F !important;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card), 0 0 10px rgba(255, 213, 79, 0.2);
+  color: #FFFDF5 !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.module-card-item:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(145deg, #7D3C1B 0%, #5C2B12 100%) !important;
+  border-color: #FFF275 !important;
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Ornamental Lotus Divider */
+.sacred-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.sacred-divider::before,
+.sacred-divider::after {
+  content: '';
+  height: 1.5px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, var(--color-border-gold), transparent);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 213, 79, 0.85);
+  }
+}
+
+.pulse-gold {
+  animation: goldPulse 3s infinite ease-in-out;
+}
+
+/* Responsive Utilities */
+.temple-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(62, 33, 20, 0.25);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.desktop-nav-bar {
+  display: none;
+}
+
+.header-desktop-extras {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-carousel-stage {
+  position: relative;
+  width: 100%;
+  height: clamp(335px, 52vw, 470px);
+  overflow: hidden;
+}
+
+.cal-day-cell {
+  min-height: clamp(54px, 9.5vw, 82px);
+}
+
+@media (max-width: 539px) {
+  .header-desktop-extras {
+    display: none;
+  }
+  .header-brand-emblem {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .header-action-btn {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .header-brand-title {
+    font-size: clamp(0.75rem, 3.6vw, 0.96rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.15px !important;
+    white-space: normal !important;
+  }
+  .header-brand-subtitle {
+    font-size: clamp(0.62rem, 2.4vw, 0.74rem) !important;
+    line-height: 1.15 !important;
+    white-space: normal !important;
+  }
+}
+
+@media (min-width: 1000px) {
+  .desktop-nav-bar {
+    display: block !important;
+  }
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Step Progress Indicator */
+.temple-steps-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.temple-step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  border: 1.5px solid var(--color-border-gold);
+  background-color: #FFFDF5;
+  color: var(--color-text-secondary);
+}
+
+.temple-step-pill.active {
+  background-color: var(--color-temple-brown);
+  border-color: #FFD54F;
+  color: #FFD54F;
+  font-weight: 800;
+}
+
+.temple-step-pill.completed {
+  background-color: #EAF7EE;
+  border-color: #1B7A3C;
+  color: #1B7A3C;
+}
+
+/* Print Styles for Unified Receipts */
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .printable-receipt,
+  .printable-receipt * {
+    visibility: visible;
+  }
+  .printable-receipt {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    background: #FFFFFF !important;
+    border: 2px solid #6D3518 !important;
+    color: #3E2114 !important;
+    box-shadow: none !important;
+  }
+}

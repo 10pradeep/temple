@@ -1,0 +1,21 @@
+/* Mouna Gurunathar Temple - Component Helper Styles */
+.temple-fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
+
+.temple-img-hover {
+  transition: transform 0.4s ease;
+}
+
+.temple-img-hover:hover {
+  transform: scale(1.04);
+}
+
+.footer-nav-btn {
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.footer-nav-btn:hover {
+  color: #FFD54F !important;
+  transform: translateX(2px);
+}
