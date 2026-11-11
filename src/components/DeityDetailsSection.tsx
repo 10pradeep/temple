@@ -58,7 +58,7 @@ export const DeityDetailsSection: React.FC<DeityDetailsSectionProps> = ({
             }}
           >
             <img
-              src="/images/opt/deity.jpg"
+              src="/images/opt/deity.jpeg"
               alt="Mouna Gurunathar - Arul Tharum Muneeswaran"
               loading="lazy"
               className="temple-img-hover"
@@ -66,7 +66,7 @@ export const DeityDetailsSection: React.FC<DeityDetailsSectionProps> = ({
                 const target = e.currentTarget;
                 if (!target.dataset.fb) {
                   target.dataset.fb = '1';
-                  target.src = '/images/deity.jpg';
+                  target.src = '/images/deity.jpeg';
                 }
               }}
               style={{

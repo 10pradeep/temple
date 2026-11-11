@@ -54,7 +54,7 @@ export const LiveDarisanamModule: React.FC<LiveDarisanamModuleProps> = ({
     const next = !isPlaying;
     setIsPlaying(next);
     if (videoRef.current) {
-      if (next) videoRef.current.play().catch(() => {});
+      if (next) videoRef.current.play().catch(() => { });
       else videoRef.current.pause();
     }
   };
@@ -71,9 +71,9 @@ export const LiveDarisanamModule: React.FC<LiveDarisanamModuleProps> = ({
     const target = playerContainerRef.current;
     if (!target) return;
     if (document.fullscreenElement) {
-      document.exitFullscreen().catch(() => {});
+      document.exitFullscreen().catch(() => { });
     } else {
-      target.requestFullscreen?.().catch(() => {});
+      target.requestFullscreen?.().catch(() => { });
     }
   };
 
