@@ -11,11 +11,315 @@
   transform: scale(1.04);
 }
 
-.footer-nav-btn {
-  transition: color 0.18s ease, transform 0.18s ease;
+.footer-two-col-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
-.footer-nav-btn:hover {
-  color: #FFD54F !important;
-  transform: translateX(2px);
+@media (min-width: 680px) {
+  .footer-two-col-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    align-items: start;
+  }
+}
+
+.footer-mail-link {
+  color: #FFE9A8;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  transition: color 0.18s ease;
+}
+
+.footer-mail-link:hover {
+  color: #FFD54F;
+}
+
+/* Mouna Gurunathar Temple Hero Section (DeityDetailsSection) */
+.deity-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  padding: 18px 16px;
+  background-color: var(--color-section-bg);
+}
+
+@media (min-width: 768px) {
+  .deity-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: stretch;
+    padding: 20px 20px;
+  }
+}
+
+.deity-hero-stage {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2.5px solid var(--color-temple-brown);
+  box-shadow: 0 6px 22px rgba(109, 53, 24, 0.28);
+  background-color: #2A1208;
+  height: 280px;
+  min-width: 0;
+}
+
+@media (min-width: 480px) {
+  .deity-hero-stage {
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .deity-hero-stage {
+    height: 336px;
+  }
+}
+
+.deity-hero-video-layer {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+  transition:
+    opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.38s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+}
+
+.deity-hero-video-layer:focus-visible {
+  box-shadow: inset 0 0 0 3px #FFD54F;
+}
+
+.deity-hero-video-layer.is-hidden {
+  opacity: 0;
+  transform: scale(0.97);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.deity-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.deity-hero-media-depth {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(42, 18, 8, 0.52) 0%, rgba(42, 18, 8, 0) 100%);
+  pointer-events: none;
+}
+
+.deity-hero-history-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #FFFDF5 0%, #FFF6DA 100%);
+  color: var(--color-text-main);
+  opacity: 0;
+  transform: scale(0.97);
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.38s ease;
+}
+
+.deity-hero-history-layer.is-visible {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.deity-history-header {
+  flex-shrink: 0;
+  padding: 12px 16px 10px 16px;
+  background: linear-gradient(180deg, #FFFDF5 0%, #FFF3CE 100%);
+  border-bottom: 1.5px solid rgba(200, 150, 36, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.deity-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  min-height: 32px;
+  border-radius: 999px;
+  background-color: var(--color-temple-brown);
+  color: #FFE9A8;
+  border: 1.5px solid #C89624;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
+}
+
+.deity-back-btn:hover {
+  background-color: var(--color-temple-brown-dark);
+  color: #FFD54F;
+  transform: translateX(-2px);
+  box-shadow: 0 3px 10px rgba(109, 53, 24, 0.24);
+}
+
+.deity-back-btn:focus-visible {
+  outline: 2px solid #6D3518;
+  outline-offset: 2px;
+}
+
+.deity-history-title {
+  font-family: var(--font-heading);
+  font-size: clamp(0.92rem, 1.75vw, 1.12rem);
+  font-weight: 800;
+  line-height: 1.38;
+  color: #5C280E;
+  margin: 0;
+}
+
+.deity-history-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  padding: 14px 16px 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #8B4A14 #F4E1A6;
+  outline: none;
+}
+
+.deity-history-scroll:focus-visible {
+  box-shadow: inset 0 0 0 2px rgba(109, 53, 24, 0.45);
+}
+
+.deity-history-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.deity-history-scroll::-webkit-scrollbar-track {
+  background: #F4E1A6;
+  border-radius: 999px;
+}
+
+.deity-history-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8B4A14 0%, #6D3518 100%);
+  border-radius: 999px;
+  border: 1.5px solid #F4E1A6;
+}
+
+.deity-history-scroll::-webkit-scrollbar-thumb:hover {
+  background: #522710;
+}
+
+.deity-history-paragraph {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.66;
+  color: #3E2114;
+  margin: 0;
+  text-align: left;
+}
+
+.deity-hero-title-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 0;
+  width: 100%;
+  padding: 16px 10px 12px 10px;
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .deity-hero-title-panel {
+    height: 100%;
+    padding: 16px 14px;
+  }
+}
+
+.deity-hero-title-trigger {
+  background: transparent;
+  border: none;
+  padding: 10px 6px;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  max-width: 100%;
+  transform-origin: center center;
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1);
+}
+
+.deity-hero-title-trigger:focus-visible {
+  outline: 2px solid #6D3518;
+  outline-offset: 4px;
+}
+
+.deity-hero-title-trigger.is-compact {
+  transform: scale(0.76);
+}
+
+.deity-hero-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 6.2cqi, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: clamp(0.03em, 0.25cqi, 0.08em);
+  text-transform: uppercase;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  display: inline-block;
+  max-width: 100%;
+  text-align: center;
+  color: #5C280E;
+  background: linear-gradient(180deg, #8F4D14 0%, #5F290C 54%, #3D1706 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 246, 214, 0.92))
+    drop-shadow(0 3px 12px rgba(212, 160, 23, 0.52))
+    drop-shadow(0 0 20px rgba(255, 213, 79, 0.42));
+  margin: 0;
 }

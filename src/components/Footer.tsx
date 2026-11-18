@@ -40,16 +40,9 @@ export const Footer: React.FC<FooterProps> = ({
       />
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 18px 20px 18px' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-            gap: '24px',
-            marginBottom: '24px'
-          }}
-        >
+        <div className="footer-two-col-grid">
           {/* Column 1: Temple Identity & About Us */}
-          <div>
+          <div style={{ minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
               <div
                 style={{
@@ -87,7 +80,7 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
             </div>
 
-            <p style={{ fontSize: '0.84rem', color: '#FFF2DF', lineHeight: 1.55, marginBottom: '12px' }}>
+            <p style={{ fontSize: '0.84rem', color: '#FFF2DF', lineHeight: 1.55, marginBottom: '12px', maxWidth: '460px' }}>
               {t.footerMission}
             </p>
 
@@ -106,48 +99,8 @@ export const Footer: React.FC<FooterProps> = ({
             </button>
           </div>
 
-          {/* Column 2: Quick Navigation Modules */}
-          <div>
-            <h4
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: '1rem',
-                color: '#FFD54F',
-                marginBottom: '12px',
-                borderBottom: '1.5px solid rgba(255, 213, 79, 0.4)',
-                paddingBottom: '6px',
-                fontWeight: 800
-              }}
-            >
-              {t.footerServicesTitle}
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: '1fr', gap: '7px', fontSize: '0.85rem' }}>
-              {[
-                { id: 'calendar' as PageView, label: t.navCalendar },
-                { id: 'darisanam' as PageView, label: t.navDarisanam },
-                { id: 'donation' as PageView, label: t.navDonation },
-                { id: 'annadhanam' as PageView, label: t.navAnnadhanam },
-                { id: 'festival' as PageView, label: t.navFestival },
-                { id: 'live' as PageView, label: t.navLive },
-                { id: 'about' as PageView, label: t.navAbout },
-                { id: 'contact' as PageView, label: t.navContact }
-              ].map((link) => (
-                <li key={link.id}>
-                  <button
-                    type="button"
-                    onClick={() => onNavigate(link.id)}
-                    className="footer-nav-btn"
-                    style={{ color: '#FFE9A8', textAlign: 'left', fontWeight: 600 }}
-                  >
-                    • {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: Contact Us & Official Email */}
-          <div>
+          {/* Column 2: Contact Us & Official Email */}
+          <div style={{ minWidth: 0 }}>
             <h4
               style={{
                 fontFamily: 'var(--font-heading)',
@@ -164,8 +117,8 @@ export const Footer: React.FC<FooterProps> = ({
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.84rem' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                 <MapPin size={16} color="#FFD54F" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ color: '#FFF5E8', lineHeight: 1.45 }}>
-                  {locationConfig.templeName}, {locationConfig.addressLine1}, {locationConfig.district}, {locationConfig.state}
+                <span style={{ color: '#FFF5E8', lineHeight: 1.45, overflowWrap: 'anywhere' }}>
+                  {locationConfig.addressLine1} {locationConfig.addressLine2}, {locationConfig.district}, {locationConfig.state} {locationConfig.pincode}
                 </span>
               </div>
 
@@ -178,13 +131,23 @@ export const Footer: React.FC<FooterProps> = ({
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Mail size={16} color="#FFD54F" style={{ flexShrink: 0 }} />
-                <span style={{ color: '#FFE9A8', fontWeight: 700, wordBreak: 'break-word' }}>
+                <a
+                  href={`mailto:${locationConfig.email}`}
+                  className="footer-mail-link"
+                >
                   {locationConfig.email}
-                </span>
+                </a>
               </div>
 
               <div style={{ marginTop: '4px', paddingTop: '8px', borderTop: '1px dashed rgba(255, 213, 79, 0.35)', fontSize: '0.78rem', color: '#FFE9A8' }}>
                 {t.footerHours}: {locationConfig.darshanMorning} &amp; {locationConfig.darshanEvening}
+              </div>
+
+              <div style={{ fontSize: '0.78rem', color: '#FFF2DF', lineHeight: 1.45 }}>
+                Developed By:{' '}
+                <span style={{ color: '#FFD54F', fontWeight: 700, letterSpacing: '0.2px' }}>
+                  Pradeep Krishnan
+                </span>
               </div>
             </div>
           </div>

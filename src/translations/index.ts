@@ -71,20 +71,11 @@ export interface Translations {
   deityViewDetailsBtn: string;
 
   // Temple Location
-  locTitle: string;
-  locSubtitle: string;
   locOpenInMaps: string;
-  locTimingsTitle: string;
-  locMorning: string;
-  locEvening: string;
-  locVerified: string;
-  locPendingVerification: string;
-  locGetDirections: string;
 
   // Footer
   footerMission: string;
   footerReadHistory: string;
-  footerServicesTitle: string;
   footerContactTitle: string;
   footerOfficialOffice: string;
   footerHours: string;
@@ -333,20 +324,11 @@ export const translations: Record<Language, Translations> = {
     deityFeat2Sub: 'Compassionate protection & blessings',
     deityViewDetailsBtn: 'View Details',
 
-    locTitle: 'Temple Location & Darisanam Timings',
-    locSubtitle: 'Official address details & visiting hours',
     locOpenInMaps: 'Open in Maps',
-    locTimingsTitle: 'Daily Temple Darisanam Timings',
-    locMorning: 'Morning',
-    locEvening: 'Evening',
-    locVerified: 'Verified Temple Location',
-    locPendingVerification: 'Address Pending Admin Verification',
-    locGetDirections: 'Directions →',
 
     footerMission:
       'Dedicated to preserving traditional Tamil Nadu temple worship, peaceful darisanam, and devotional Annadhanam service under the grace of Mouna Gurunathar.',
     footerReadHistory: 'Read Mouna Gurunathar Temple Details →',
-    footerServicesTitle: 'Temple Modules',
     footerContactTitle: 'Contact Us',
     footerOfficialOffice: '(Temple Office)',
     footerHours: 'Visiting Hours',
@@ -594,20 +576,11 @@ export const translations: Record<Language, Translations> = {
     deityFeat2Sub: 'பக்தர்களைக் காக்கும் தெய்வீக அருள்',
     deityViewDetailsBtn: 'முழு விவரம் காண்க',
 
-    locTitle: 'திருக்கோயில் அமைவிடம் & தரிசன நேரம்',
-    locSubtitle: 'அதிகாரப்பூர்வ முகவரி மற்றும் வழிபாட்டு நேரங்கள்',
     locOpenInMaps: 'வரைபடத்தில் பார்க்க',
-    locTimingsTitle: 'தினசரி தரிசன நேரங்கள்',
-    locMorning: 'காலை',
-    locEvening: 'மாலை',
-    locVerified: 'சரிபார்க்கப்பட்ட கோயில் முகவரி',
-    locPendingVerification: 'முகவரி நிர்வாக சரிபார்ப்பில் உள்ளது',
-    locGetDirections: 'வழித்தடம் →',
 
     footerMission:
       'மௌன குருநாதர் திருவருளால் தமிழ்நாடு பாரம்பரிய கோயில் வழிபாடு, அமைதியான தரிசனம் மற்றும் அன்னதான சேவையைப் பேணுகிறது.',
     footerReadHistory: 'மௌன குருநாதர் திருக்கோயில் வரலாறு வாசிக்க →',
-    footerServicesTitle: 'கோயில் சேவைகள்',
     footerContactTitle: 'தொடர்பு கொள்ள',
     footerOfficialOffice: '(கோயில் அலுவலகம்)',
     footerHours: 'தரிசன நேரம்',

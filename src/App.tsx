@@ -49,7 +49,6 @@ import { Header } from './components/Header';
 import { HeroCarousel } from './components/HeroCarousel';
 import { ModuleCard } from './components/ModuleCard';
 import { DeityDetailsSection } from './components/DeityDetailsSection';
-import { TempleLocationSection } from './components/TempleLocationSection';
 import { Footer } from './components/Footer';
 import { LotusOrnament } from './components/LotusOrnament';
 import { NotificationsModal } from './components/NotificationsModal';
@@ -153,18 +152,60 @@ export function App() {
   const [festivals, setFestivals] = useState<FestivalItem[]>(() =>
     getStoredData(STORAGE_KEYS.FESTIVALS, initialFestivals)
   );
-  const [locationConfig, setLocationConfig] = useState<TempleLocationConfig>(() =>
-    getStoredData(STORAGE_KEYS.LOCATION_CONFIG, initialLocationConfig)
-  );
+  const [locationConfig, setLocationConfig] = useState<TempleLocationConfig>(() => {
+    const stored = getStoredData(STORAGE_KEYS.LOCATION_CONFIG, initialLocationConfig);
+    const hasLegacyPlaceholderAddress =
+      typeof stored.addressLine1 === 'string' && stored.addressLine1.includes('[Editable Placeholder:');
+    const hasLegacyExampleEmail =
+      typeof stored.email === 'string' && stored.email.includes('mounagurunathartemple.example');
+
+    if (!hasLegacyPlaceholderAddress && !hasLegacyExampleEmail) {
+      return stored;
+    }
+
+    return {
+      ...stored,
+      ...(hasLegacyPlaceholderAddress
+        ? {
+            addressLine1: initialLocationConfig.addressLine1,
+            addressLine2: initialLocationConfig.addressLine2,
+            city: initialLocationConfig.city,
+            district: initialLocationConfig.district,
+            state: initialLocationConfig.state,
+            pincode: initialLocationConfig.pincode,
+            verificationNote: initialLocationConfig.verificationNote
+          }
+        : {}),
+      ...(hasLegacyExampleEmail ? { email: initialLocationConfig.email } : {})
+    };
+  });
   const [liveStreamConfig, setLiveStreamConfig] = useState<LiveStreamConfig>(() =>
     getStoredData(STORAGE_KEYS.LIVE_STREAM_CONFIG, initialLiveStreamConfig)
   );
   const [heroSlides, setHeroSlides] = useState<HeroMediaItem[]>(() =>
     getStoredData(STORAGE_KEYS.HERO_SLIDES, initialHeroSlides)
   );
-  const [deityInfo, setDeityInfo] = useState<DeityInfo>(() =>
-    getStoredData(STORAGE_KEYS.DEITY_INFO, initialDeityInfo)
-  );
+  const [deityInfo, setDeityInfo] = useState<DeityInfo>(() => {
+    const stored = getStoredData(STORAGE_KEYS.DEITY_INFO, initialDeityInfo);
+    const hasLegacyHistory =
+      Array.isArray(stored.history) &&
+      stored.history.some(
+        (line) =>
+          typeof line === 'string' &&
+          (line.includes('[Editable Temple History Placeholder]') ||
+            line.includes('silent spiritual preceptor') ||
+            line.includes('relief from worldly anxieties'))
+      );
+
+    if (!hasLegacyHistory) {
+      return stored;
+    }
+
+    return {
+      ...stored,
+      history: initialDeityInfo.history
+    };
+  });
   const [announcements, setAnnouncements] = useState<TempleAnnouncement[]>(() =>
     getStoredData(STORAGE_KEYS.ANNOUNCEMENTS, initialAnnouncements)
   );
@@ -310,7 +351,7 @@ export function App() {
               language={language}
             />
 
-            <div style={{ maxWidth: '1120px', margin: '0 auto', padding: '20px 14px 8px 14px' }}>
+            <div style={{ maxWidth: '1120px', margin: '0 auto', padding: '20px 14px 16px 14px' }}>
               <LotusOrnament label={t.moolaMantra} />
 
               {/* 3. Six Main Module Cards */}
@@ -422,14 +463,6 @@ export function App() {
               <DeityDetailsSection
                 deityInfo={deityInfo}
                 onNavigate={handleNavigate}
-                language={language}
-              />
-
-              <LotusOrnament />
-
-              {/* 5. Temple Location and Map Section */}
-              <TempleLocationSection
-                locationConfig={locationConfig}
                 language={language}
               />
             </div>

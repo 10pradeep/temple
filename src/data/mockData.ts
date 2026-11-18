@@ -20,9 +20,8 @@ export const initialDeityInfo: DeityInfo = {
   shortIntro:
     'Mouna Gurunathar (Arul Tharum Muneeswaran) is revered as the serene silent spiritual master and compassionate guardian deity who bestows inner peace, courage, and divine protection upon sincere devotees.',
   history: [
-    'Mouna Gurunathar Temple is dedicated to Lord Muneeswaran worshipped in the sacred aspect of Mouna Gurunathar — the silent spiritual preceptor.',
-    '[Editable Temple History Placeholder] Specific local Sthalapuranam chronicles, founding year, and consecrated lineage details will be updated here once verified records are provided by the temple administration.',
-    'Devotees gather at the sanctum to offer silent prayers, sacred lamps, and heartfelt devotion seeking clarity, strength, and relief from worldly anxieties.'
+    'This temple holds a special place in the hearts of the people of S. Parraipatty and its surrounding communities. The great spiritual personality, Mouna Gurunathar, associated with this sacred place, is remembered and respected by generations of people for his humanity, kindness, and selfless service.',
+    'He is regarded by many devotees as a divine guardian and a source of blessings. His compassion, dedication, and contributions have made a lasting impact on the people and the spiritual development of this place. Even today, people remember him with deep respect, gratitude, and devotion.'
   ],
   spiritualSignificance: [
     'Mouna (Sacred Silence): Contemplating Mouna Gurunathar cultivates stillness of mind, humility, and inner spiritual clarity.',
@@ -95,20 +94,20 @@ export const initialDeityInfo: DeityInfo = {
 export const initialLocationConfig: TempleLocationConfig = {
   templeName: 'Mouna Gurunathar Temple',
   subtitle: 'Arul Tharum Muneeswaran',
-  addressLine1: '[Editable Placeholder: Temple Street / Sannathi Address]',
-  addressLine2: '[Editable Placeholder: Village / Locality / Landmark]',
-  city: '[City / Town — Pending Verification]',
-  district: '[District — Pending Verification]',
+  addressLine1: 'S. Parapatti, sempatty via, authoor talk',
+  addressLine2: 'Mouna Gurunathar kovil',
+  city: 'S. Parapatti',
+  district: 'Dindigul',
   state: 'Tamil Nadu',
-  pincode: '[PIN Code]',
+  pincode: '624707',
   phone: '[Official Temple Phone — Update in Admin]',
   secondaryPhone: '[Helpline Phone — Update in Admin]',
-  email: 'office@mounagurunathartemple.example',
+  email: 'mounagurunatharparaipatty@gmail.com',
   darshanMorning: '06:00 AM - 12:30 PM (Placeholder)',
   darshanEvening: '04:30 PM - 09:00 PM (Placeholder)',
   googleMapsUrl: '',
   isVerified: false,
-  verificationNote: 'Official address, contact numbers, and verified Google Maps coordinates are pending administrator confirmation.'
+  verificationNote: 'Official temple contact phone numbers and Google Maps coordinates can be configured in Admin Panel.'
 };
 
 export const initialLiveStreamConfig: LiveStreamConfig = {
