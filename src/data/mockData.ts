@@ -16,9 +16,9 @@ import {
 
 export const initialDeityInfo: DeityInfo = {
   name: 'Mouna Gurunathar',
-  subtitle: 'Arul Tharum Muneeswaran',
+  subtitle: '',
   shortIntro:
-    'Mouna Gurunathar (Arul Tharum Muneeswaran) is revered as the serene silent spiritual master and compassionate guardian deity who bestows inner peace, courage, and divine protection upon sincere devotees.',
+    'Mouna Gurunathar is revered as the serene silent spiritual master and compassionate guardian deity who bestows inner peace, courage, and divine protection upon sincere devotees.',
   history: [
     'This temple holds a special place in the hearts of the people of S. Parraipatty and its surrounding communities. The great spiritual personality, Mouna Gurunathar, associated with this sacred place, is remembered and respected by generations of people for his humanity, kindness, and selfless service.',
     'He is regarded by many devotees as a divine guardian and a source of blessings. His compassion, dedication, and contributions have made a lasting impact on the people and the spiritual development of this place. Even today, people remember him with deep respect, gratitude, and devotion.'
@@ -26,7 +26,7 @@ export const initialDeityInfo: DeityInfo = {
   spiritualSignificance: [
     'Mouna (Sacred Silence): Contemplating Mouna Gurunathar cultivates stillness of mind, humility, and inner spiritual clarity.',
     'Trishul & Vibhuti: Traditional emblems symbolizing protection, auspiciousness, and the removal of fear.',
-    'Arul Tharum Muneeswaran: Worshipped as a compassionate guardian who responds to sincere silent devotion.'
+    'Mouna Gurunathar Grace: Worshipped as a compassionate guardian who responds to sincere silent devotion.'
   ],
   traditions: [
     '[Editable Tradition Placeholder] Daily sanctum worship timings and pooja order to be confirmed by Temple Office.',
@@ -93,7 +93,7 @@ export const initialDeityInfo: DeityInfo = {
 
 export const initialLocationConfig: TempleLocationConfig = {
   templeName: 'Mouna Gurunathar Temple',
-  subtitle: 'Arul Tharum Muneeswaran',
+  subtitle: '',
   addressLine1: 'S. Parapatti, sempatty via, authoor talk',
   addressLine2: 'Mouna Gurunathar kovil',
   city: 'S. Parapatti',
@@ -128,8 +128,8 @@ export const initialHeroSlides: HeroMediaItem[] = [
     src: '/images/opt/deity.jpg',
     titleEn: 'Mouna Gurunathar',
     titleTa: 'மௌன குருநாதர்',
-    subtitleEn: 'Arul Tharum Muneeswaran — Divine Silent Master & Guardian of Devotees',
-    subtitleTa: 'அருள் தரும் முனீஸ்வரன் — அமைதியின் வடிவம், காக்கும் காவல் தெய்வம்',
+    subtitleEn: 'Divine Silent Master & Guardian of Devotees',
+    subtitleTa: 'அமைதியின் வடிவம், காக்கும் காவல் தெய்வம்',
     badgeEn: 'SACRED SANCTUM DARISANAM',
     badgeTa: 'புனித சந்நிதி தரிசனம்',
     actionTextEn: 'Book Darisanam',
@@ -223,7 +223,7 @@ export const initialFestivals: FestivalItem[] = [
     category: 'Major Temple Festivals',
     image: '/images/opt/festival.jpg',
     description:
-      'Grand annual temple celebration honoring Mouna Gurunathar (Arul Tharum Muneeswaran). Exact festival dates and Vedic schedule will be confirmed by the Temple Office.',
+      'Grand annual temple celebration honoring Mouna Gurunathar. Exact festival dates and Vedic schedule will be confirmed by the Temple Office.',
     poojaTimings: 'Schedule to be published by Temple Archakar',
     specialInstructions: 'Watch official announcements or check Calendar after Panchangam verification.',
     isProminent: true,

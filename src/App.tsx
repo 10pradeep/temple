@@ -149,22 +149,29 @@ export function App() {
   const [annadhanamConfig, setAnnadhanamConfig] = useState<AnnadhanamConfig>(() =>
     getStoredData(STORAGE_KEYS.ANNADHANAM_CONFIG, createInitialAnnadhanamConfig())
   );
-  const [festivals, setFestivals] = useState<FestivalItem[]>(() =>
-    getStoredData(STORAGE_KEYS.FESTIVALS, initialFestivals)
-  );
+  const [festivals, setFestivals] = useState<FestivalItem[]>(() => {
+    const stored = getStoredData(STORAGE_KEYS.FESTIVALS, initialFestivals);
+    return stored.map((item) => ({
+      ...item,
+      description: item.description.replace(/\s*\(Arul Tharum Muneeswaran\)/gi, '')
+    }));
+  });
   const [locationConfig, setLocationConfig] = useState<TempleLocationConfig>(() => {
     const stored = getStoredData(STORAGE_KEYS.LOCATION_CONFIG, initialLocationConfig);
     const hasLegacyPlaceholderAddress =
       typeof stored.addressLine1 === 'string' && stored.addressLine1.includes('[Editable Placeholder:');
     const hasLegacyExampleEmail =
       typeof stored.email === 'string' && stored.email.includes('mounagurunathartemple.example');
+    const hasLegacySubtitle =
+      typeof stored.subtitle === 'string' && /Arul Tharum Muneeswaran/i.test(stored.subtitle);
 
-    if (!hasLegacyPlaceholderAddress && !hasLegacyExampleEmail) {
+    if (!hasLegacyPlaceholderAddress && !hasLegacyExampleEmail && !hasLegacySubtitle) {
       return stored;
     }
 
     return {
       ...stored,
+      ...(hasLegacySubtitle ? { subtitle: '' } : {}),
       ...(hasLegacyPlaceholderAddress
         ? {
             addressLine1: initialLocationConfig.addressLine1,
@@ -182,9 +189,14 @@ export function App() {
   const [liveStreamConfig, setLiveStreamConfig] = useState<LiveStreamConfig>(() =>
     getStoredData(STORAGE_KEYS.LIVE_STREAM_CONFIG, initialLiveStreamConfig)
   );
-  const [heroSlides, setHeroSlides] = useState<HeroMediaItem[]>(() =>
-    getStoredData(STORAGE_KEYS.HERO_SLIDES, initialHeroSlides)
-  );
+  const [heroSlides, setHeroSlides] = useState<HeroMediaItem[]>(() => {
+    const stored = getStoredData(STORAGE_KEYS.HERO_SLIDES, initialHeroSlides);
+    return stored.map((slide) => ({
+      ...slide,
+      subtitleEn: slide.subtitleEn.replace(/Arul Tharum Muneeswaran\s*[—–-]\s*/gi, '').replace(/Arul Tharum Muneeswaran/gi, '').trim(),
+      subtitleTa: slide.subtitleTa.replace(/அருள் தரும் முனீஸ்வரன்\s*[—–-]\s*/g, '').replace(/அருள் தரும் முனீஸ்வரன்/g, '').trim()
+    }));
+  });
   const [deityInfo, setDeityInfo] = useState<DeityInfo>(() => {
     const stored = getStoredData(STORAGE_KEYS.DEITY_INFO, initialDeityInfo);
     const hasLegacyHistory =
@@ -196,14 +208,28 @@ export function App() {
             line.includes('silent spiritual preceptor') ||
             line.includes('relief from worldly anxieties'))
       );
+    const hasLegacySubtitle =
+      (typeof stored.subtitle === 'string' && /Arul Tharum Muneeswaran/i.test(stored.subtitle)) ||
+      (typeof stored.shortIntro === 'string' && /Arul Tharum Muneeswaran/i.test(stored.shortIntro)) ||
+      (Array.isArray(stored.spiritualSignificance) &&
+        stored.spiritualSignificance.some((s) => /Arul Tharum Muneeswaran/i.test(s)));
 
-    if (!hasLegacyHistory) {
+    if (!hasLegacyHistory && !hasLegacySubtitle) {
       return stored;
     }
 
     return {
       ...stored,
-      history: initialDeityInfo.history
+      ...(hasLegacyHistory ? { history: initialDeityInfo.history } : {}),
+      ...(hasLegacySubtitle
+        ? {
+            subtitle: '',
+            shortIntro: stored.shortIntro.replace(/\s*\(Arul Tharum Muneeswaran\)/gi, ''),
+            spiritualSignificance: stored.spiritualSignificance.map((s) =>
+              s.replace(/Arul Tharum Muneeswaran/gi, 'Mouna Gurunathar Grace')
+            )
+          }
+        : {})
     };
   });
   const [announcements, setAnnouncements] = useState<TempleAnnouncement[]>(() =>
@@ -380,10 +406,6 @@ export function App() {
                     <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.84rem', fontWeight: 600 }}>
                       {t.homeModulesSubtitle}
                     </p>
-                  </div>
-
-                  <div style={{ fontSize: '0.78rem', color: 'var(--color-temple-brown)', fontWeight: 800 }}>
-                    {t.templeSubtitle}
                   </div>
                 </div>
 

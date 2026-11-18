@@ -74,9 +74,6 @@ export const Footer: React.FC<FooterProps> = ({
                 >
                   {t.templeName}
                 </h3>
-                <p style={{ color: '#FFE9A8', fontSize: '0.8rem', marginTop: '1px', fontWeight: 600 }}>
-                  {t.templeSubtitle}
-                </p>
               </div>
             </div>
 
@@ -171,7 +168,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div>
             © {currentYear} {t.footerCopyright}
             <span style={{ display: 'block', fontSize: '0.74rem', color: '#FFD54F', marginTop: '2px', fontWeight: 600 }}>
-              Mouna Gurunathar | {t.templeSubtitle}
+              Mouna Gurunathar
             </span>
           </div>
 

@@ -80,7 +80,7 @@ export const ReceiptView: React.FC<ReceiptViewProps> = ({
   <div class="card">
     <div class="header">
       <h1 style="margin:0;color:#6D3518;">MOUNA GURUNATHAR TEMPLE</h1>
-      <p style="margin:4px 0 10px 0;color:#58331E;">Arul Tharum Muneeswaran • Official-Format Seva & Donation Receipt</p>
+      <p style="margin:4px 0 10px 0;color:#58331E;">Official-Format Seva & Donation Receipt</p>
       <span class="badge">VERIFIED PAYMENT STATUS (PROTOTYPE DEMO)</span>
     </div>
     <div class="grid">

@@ -58,9 +58,11 @@ export const AboutModule: React.FC<AboutModuleProps> = ({
           {language === 'ta' ? t.deityTitle : deityInfo.name}
         </h2>
 
-        <p style={{ fontSize: '1.02rem', color: 'var(--color-temple-brown)', fontWeight: 700, marginBottom: '12px' }}>
-          {language === 'ta' ? t.deitySubtitle : deityInfo.subtitle}
-        </p>
+        {(language === 'ta' ? t.deitySubtitle : deityInfo.subtitle) && (
+          <p style={{ fontSize: '1.02rem', color: 'var(--color-temple-brown)', fontWeight: 700, marginBottom: '12px' }}>
+            {language === 'ta' ? t.deitySubtitle : deityInfo.subtitle}
+          </p>
+        )}
 
         <p style={{ fontSize: '0.92rem', color: 'var(--color-text-main)', maxWidth: '720px', margin: '0 auto 14px auto', lineHeight: 1.6 }}>
           {language === 'ta' ? t.deityIntro : deityInfo.shortIntro}

@@ -252,18 +252,6 @@ export const Header: React.FC<HeaderProps> = ({
               >
                 {t.templeName}
               </h1>
-              <p
-                className="header-brand-subtitle"
-                style={{
-                  color: '#FFE9A8',
-                  fontSize: 'clamp(0.68rem, 1.8vw, 0.82rem)',
-                  fontWeight: 600,
-                  letterSpacing: '0.4px',
-                  marginTop: '1px'
-                }}
-              >
-                {t.templeSubtitle}
-              </p>
             </div>
           </div>
 

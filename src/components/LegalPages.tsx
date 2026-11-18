@@ -87,7 +87,7 @@ export const TermsConditionsView: React.FC<LegalPageProps> = ({
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.9rem', lineHeight: 1.65 }}>
           <p>
-            <strong>1. Temple Portal Purpose:</strong> This portal serves devotees of Mouna Gurunathar Temple (Arul Tharum Muneeswaran) with festival schedules, Darisanam slot requests, Annadhanam sponsorship scheduling, and temple updates.
+            <strong>1. Temple Portal Purpose:</strong> This portal serves devotees of Mouna Gurunathar Temple with festival schedules, Darisanam slot requests, Annadhanam sponsorship scheduling, and temple updates.
           </p>
           <p>
             <strong>2. Demonstration Mode Disclaimer:</strong> Payment gateways, online receipt issuance, Darisanam confirmation status, and Admin authentication operate in frontend demonstration mode until connected to Mouna Gurunathar Temple&apos;s authorized backend server. No real financial transactions are processed here.

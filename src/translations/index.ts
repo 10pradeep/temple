@@ -261,7 +261,7 @@ export interface Translations {
 export const translations: Record<Language, Translations> = {
   en: {
     templeName: 'Mouna Gurunathar Temple',
-    templeSubtitle: 'Arul Tharum Muneeswaran',
+    templeSubtitle: '',
     mantraShort: 'Om Mouna Gurunatharaya Namaha',
     moolaMantra: '|| Om Mouna Gurunatharaya Namaha ||',
 
@@ -315,12 +315,12 @@ export const translations: Record<Language, Translations> = {
 
     deityBadge: 'PRESIDING DEITY & TEMPLE HERITAGE',
     deityTitle: 'Mouna Gurunathar',
-    deitySubtitle: 'Arul Tharum Muneeswaran',
+    deitySubtitle: '',
     deityIntro:
-      'Mouna Gurunathar (Arul Tharum Muneeswaran) is worshipped as the serene silent spiritual master and compassionate guardian deity who blesses sincere devotees with inner peace, courage, and protection.',
+      'Mouna Gurunathar is worshipped as the serene silent spiritual master and compassionate guardian deity who blesses sincere devotees with inner peace, courage, and protection.',
     deityFeat1Title: 'Mouna Sakthi',
     deityFeat1Sub: 'Sacred silence, clarity & peace of mind',
-    deityFeat2Title: 'Arul Tharum Grace',
+    deityFeat2Title: 'Divine Grace',
     deityFeat2Sub: 'Compassionate protection & blessings',
     deityViewDetailsBtn: 'View Details',
 
@@ -513,7 +513,7 @@ export const translations: Record<Language, Translations> = {
 
   ta: {
     templeName: 'மௌன குருநாதர் திருக்கோயில்',
-    templeSubtitle: 'அருள் தரும் முனீஸ்வரன்',
+    templeSubtitle: '',
     mantraShort: 'ஓம் மௌன குருநாதராய நமஹ',
     moolaMantra: '|| ஓம் மௌன குருநாதராய நமஹ ||',
 
@@ -567,12 +567,12 @@ export const translations: Record<Language, Translations> = {
 
     deityBadge: 'மூலவர் & திருக்கோயில் சிறப்பு',
     deityTitle: 'மௌன குருநாதர்',
-    deitySubtitle: 'அருள் தரும் முனீஸ்வரன்',
+    deitySubtitle: '',
     deityIntro:
-      'மௌன குருநாதர் (அருள் தரும் முனீஸ்வரன்) அமைதியின் திருவுருவமாகவும், பக்தர்களுக்கு மன அமைதி, தைரியம் மற்றும் தெய்வீகக் காவல் அருளும் ஞான குருவாகவும் போற்றப்படுகிறார்.',
+      'மௌன குருநாதர் அமைதியின் திருவுருவமாகவும், பக்தர்களுக்கு மன அமைதி, தைரியம் மற்றும் தெய்வீகக் காவல் அருளும் ஞான குருவாகவும் போற்றப்படுகிறார்.',
     deityFeat1Title: 'மௌன சக்தி',
     deityFeat1Sub: 'ஆன்மீக அமைதி & மனத் தெளிவு',
-    deityFeat2Title: 'அருள் தரும் கருணை',
+    deityFeat2Title: 'தெய்வீகக் கருணை',
     deityFeat2Sub: 'பக்தர்களைக் காக்கும் தெய்வீக அருள்',
     deityViewDetailsBtn: 'முழு விவரம் காண்க',
 
