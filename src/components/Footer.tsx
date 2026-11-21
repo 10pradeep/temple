@@ -152,14 +152,17 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
 
               <div style={{ fontSize: '0.78rem', color: '#FFF2DF', lineHeight: 1.45 }}>
-                {t.footerDevelopedBy}{' '}
+                {t.footerMentor}{' '}
                 <span style={{ color: '#FFD54F', fontWeight: 700, letterSpacing: '0.2px' }}>
-                  MG NEXA SOLUTIONS
+                  AnanhaKumar Jayarajan
                 </span>
               </div>
 
-              <div style={{ fontSize: '0.74rem', color: '#FFE9A8', fontWeight: 600, letterSpacing: '0.2px', lineHeight: 1.4 }}>
-                ANANHAKUMAR JAYARAJAN, PRADEEP KRISHNAN
+              <div style={{ fontSize: '0.78rem', color: '#FFF2DF', lineHeight: 1.45 }}>
+                {t.footerDevelopedCreatedBy}{' '}
+                <span style={{ color: '#FFD54F', fontWeight: 700, letterSpacing: '0.2px' }}>
+                  Pradeep Krishnan
+                </span>
               </div>
             </div>
           </div>
