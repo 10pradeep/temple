@@ -126,9 +126,13 @@ export function App() {
   const isAdminLoggedInRef = useRef<boolean>(false);
 
   const [language, setLanguage] = useState<Language>(() => {
-    const stored = getStoredData<Language | null>(STORAGE_KEYS.LANGUAGE, null);
-    if (stored === 'en' || stored === 'ta') {
-      return stored;
+    try {
+      const sess = sessionStorage.getItem('mgt_v2_session_lang');
+      if (sess === 'en' || sess === 'ta') {
+        return sess;
+      }
+    } catch {
+      // ignore
     }
     return 'ta';
   });
@@ -261,8 +265,15 @@ export function App() {
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
-  // Persist to localStorage
-  useEffect(() => setStoredData(STORAGE_KEYS.LANGUAGE, language), [language]);
+  // Persist language to sessionStorage & localStorage
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('mgt_v2_session_lang', language);
+    } catch {
+      // ignore
+    }
+    setStoredData(STORAGE_KEYS.LANGUAGE, language);
+  }, [language]);
   useEffect(() => setStoredData(STORAGE_KEYS.CALENDAR_EVENTS, events), [events]);
   useEffect(() => setStoredData(STORAGE_KEYS.DARISANAM_SLOTS, darisanamSlots), [darisanamSlots]);
   useEffect(() => setStoredData(STORAGE_KEYS.DARISANAM_BOOKINGS, darisanamBookings), [darisanamBookings]);

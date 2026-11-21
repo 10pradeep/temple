@@ -86,6 +86,7 @@ export interface Translations {
   footerIdeaContributor: string;
   footerIdeaContributorName: string;
   footerDevelopedCreatedBy: string;
+  footerDeveloperName: string;
   footerWorkInProgress: string;
 
   // Calendar Module
@@ -343,7 +344,8 @@ export const translations: Record<Language, Translations> = {
     footerDevelopedBy: 'Developed By:',
     footerIdeaContributor: 'Website Idea Contributor:',
     footerIdeaContributorName: 'Anand Kumar Jayarajan',
-    footerDevelopedCreatedBy: 'Developed & Created by:',
+    footerDevelopedCreatedBy: 'Developed and Created by:',
+    footerDeveloperName: 'Pradeep Krishnan',
     footerWorkInProgress: 'Work in progress. Share your data sources to help us expand—contact us',
 
     calPanchangamBadge: '2026 – 2035 TEMPLE CALENDAR',
@@ -600,7 +602,8 @@ export const translations: Record<Language, Translations> = {
     footerDevelopedBy: 'உருவாக்கியவர்:',
     footerIdeaContributor: 'இணையதளக் கருத்துப் பங்களிப்பாளர்:',
     footerIdeaContributorName: 'ஆனந்தகுமார் ஜெயராஜன்',
-    footerDevelopedCreatedBy: 'உருவாக்கம் மற்றும் மேம்பாடு:',
+    footerDevelopedCreatedBy: 'உருவாக்கம் மற்றும் வடிவமைப்பு:',
+    footerDeveloperName: 'பிரதீப் கிருஷ்ணன்',
     footerWorkInProgress:
       'பணிகள் நடைபெற்று வருகின்றன. எங்கள் சேவையை விரிவுபடுத்த உங்கள் தரவு ஆதாரங்களைப் பகிருங்கள் — எங்களைத் தொடர்புகொள்ளுங்கள்.',
 
