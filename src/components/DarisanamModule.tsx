@@ -155,10 +155,12 @@ export const DarisanamModule: React.FC<DarisanamModuleProps> = ({
         numberOfDevotees,
         date: selectedDate,
         slotId: selectedSlot.id,
-        slotLabel: `${selectedSlot.label} (${selectedSlot.timeRange})`,
+        slotLabel: `${language === 'ta' ? selectedSlot.labelTa : selectedSlot.label} (${selectedSlot.timeRange})`,
         status: 'pending',
         statusNote:
-          'Frontend Prototype Request Recorded — Pending Backend / Temple Office Confirmation.',
+          language === 'ta'
+            ? 'முன்மாதிரி கோரிக்கை பதிவு செய்யப்பட்டது — கோயில் அலுவலக உறுதிப்படுத்தல் நிலுவையில்.'
+            : 'Frontend Prototype Request Recorded — Pending Backend / Temple Office Confirmation.',
         createdAt: new Date().toISOString(),
         isDemo: true
       };
@@ -509,7 +511,7 @@ export const DarisanamModule: React.FC<DarisanamModuleProps> = ({
                   maxLength={10}
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
-                  placeholder="10-digit mobile number"
+                  placeholder={language === 'ta' ? '10 இலக்க அலைபேசி எண்' : '10-digit mobile number'}
                   className="form-input"
                 />
                 {errors.mobile && (
@@ -554,7 +556,7 @@ export const DarisanamModule: React.FC<DarisanamModuleProps> = ({
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@example.com"
+                  placeholder={language === 'ta' ? 'மின்னஞ்சல் முகவரி' : 'name@example.com'}
                   className="form-input"
                 />
                 {errors.email && (

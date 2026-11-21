@@ -125,9 +125,13 @@ export function App() {
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState<boolean>(false);
   const isAdminLoggedInRef = useRef<boolean>(false);
 
-  const [language, setLanguage] = useState<Language>(() =>
-    getStoredData<Language>(STORAGE_KEYS.LANGUAGE, 'en')
-  );
+  const [language, setLanguage] = useState<Language>(() => {
+    const stored = getStoredData<Language | null>(STORAGE_KEYS.LANGUAGE, null);
+    if (stored === 'en' || stored === 'ta') {
+      return stored;
+    }
+    return 'ta';
+  });
   const [resetVersion, setResetVersion] = useState<number>(0);
   const t = translations[language];
 
@@ -338,7 +342,9 @@ export function App() {
           fontWeight: 700
         }}
       >
-        Loading Mouna Gurunathar Temple Module...
+        {language === 'ta'
+          ? 'மௌன குருநாதர் திருக்கோயில் பக்கம் ஏற்றப்படுகிறது...'
+          : 'Loading Mouna Gurunathar Temple Module...'}
       </div>
     </div>
   );

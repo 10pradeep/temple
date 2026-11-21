@@ -589,7 +589,21 @@ export const AnnadhanamModule: React.FC<AnnadhanamModuleProps> = ({
                         color: !isOpen || isSelected ? '#FFFFFF' : '#1B7A3C'
                       }}
                     >
-                      {!isOpen ? (isBooked ? 'FULL' : 'UNAVAILABLE') : isSelected ? 'SELECTED' : 'OPEN'}
+                      {!isOpen
+                        ? isBooked
+                          ? language === 'ta'
+                            ? 'நிரம்பியது'
+                            : 'FULL'
+                          : language === 'ta'
+                            ? 'கிடைக்காது'
+                            : 'UNAVAILABLE'
+                        : isSelected
+                          ? language === 'ta'
+                            ? 'தேர்வு'
+                            : 'SELECTED'
+                          : language === 'ta'
+                            ? 'கிடைக்கிறது'
+                            : 'OPEN'}
                     </span>
                   </button>
                 );
@@ -605,7 +619,7 @@ export const AnnadhanamModule: React.FC<AnnadhanamModuleProps> = ({
               >
                 {[1, 2, 5, 10, 25, 50].map((q) => (
                   <option key={q} value={q}>
-                    {q} {q === 1 ? 'Unit / Meal' : 'Units / Meals'} (₹{(q * sponsorshipAmount).toLocaleString('en-IN')})
+                    {q} {q === 1 ? (language === 'ta' ? 'உணவுப் பங்கு' : 'Unit / Meal') : (language === 'ta' ? 'உணவுப் பங்குகள்' : 'Units / Meals')} (₹{(q * sponsorshipAmount).toLocaleString('en-IN')})
                   </option>
                 ))}
               </select>
@@ -646,7 +660,7 @@ export const AnnadhanamModule: React.FC<AnnadhanamModuleProps> = ({
                 <label className="form-label">{t.annMobileLabel}</label>
                 <input
                   type="tel"
-                  placeholder="10-digit mobile number"
+                  placeholder={language === 'ta' ? '10 இலக்க அலைபேசி எண்' : '10-digit mobile number'}
                   maxLength={10}
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
@@ -663,7 +677,7 @@ export const AnnadhanamModule: React.FC<AnnadhanamModuleProps> = ({
                 <label className="form-label">{t.annEmailLabel}</label>
                 <input
                   type="email"
-                  placeholder="name@example.com"
+                  placeholder={language === 'ta' ? 'மின்னஞ்சல் முகவரி' : 'name@example.com'}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="form-input"
@@ -821,7 +835,7 @@ export const AnnadhanamModule: React.FC<AnnadhanamModuleProps> = ({
           >
             <AlertCircle size={20} color="#B45309" style={{ flexShrink: 0 }} />
             <div style={{ fontSize: '0.8rem', color: '#78350F' }}>
-              <strong>DEMONSTRATION PAYMENT INTERFACE:</strong> {t.annSimulateNotice}
+              <strong>{language === 'ta' ? 'மாதிரி கட்டண இடைமுகம்:' : 'DEMONSTRATION PAYMENT INTERFACE:'}</strong> {t.annSimulateNotice}
             </div>
           </div>
 
@@ -830,7 +844,7 @@ export const AnnadhanamModule: React.FC<AnnadhanamModuleProps> = ({
               {t.annSimulateTitle}
             </h3>
             <p style={{ fontSize: '0.86rem', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
-              Amount: <strong>₹{totalAmount.toLocaleString('en-IN')}</strong> • {selectedDateStr} ({mealType})
+              {language === 'ta' ? 'தொகை:' : 'Amount:'} <strong>₹{totalAmount.toLocaleString('en-IN')}</strong> • {selectedDateStr} ({mealType === 'Lunch' ? (language === 'ta' ? 'மதிய அன்னதானம்' : 'Lunch') : (language === 'ta' ? 'மாலை பிரசாதம்' : 'Evening Prasadam')})
             </p>
           </div>
 
@@ -842,7 +856,7 @@ export const AnnadhanamModule: React.FC<AnnadhanamModuleProps> = ({
               className="btn-temple-primary"
             >
               <Lock size={15} />
-              <span>{isProcessing ? 'Recording...' : t.annSimulateBtn}</span>
+              <span>{isProcessing ? (language === 'ta' ? 'பதிவாகிறது...' : 'Recording...') : t.annSimulateBtn}</span>
             </button>
 
             <button

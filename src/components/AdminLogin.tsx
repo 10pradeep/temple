@@ -268,7 +268,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({
               <input
                 id="admin-login-id"
                 type="text"
-                placeholder="e.g. trustee-admin"
+                placeholder={language === 'ta' ? 'எ.கா. trustee-admin' : 'e.g. trustee-admin'}
                 value={loginId}
                 onChange={(e) => setLoginId(e.target.value)}
                 className="form-input"
@@ -290,7 +290,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({
               <input
                 id="admin-air-number"
                 type="text"
-                placeholder="Enter AIR identifier (subject to verification)"
+                placeholder={language === 'ta' ? 'AIR அடையாள எண் உள்ளிடவும்' : 'Enter AIR identifier (subject to verification)'}
                 value={airNumber}
                 onChange={(e) => setAirNumber(e.target.value)}
                 className="form-input"
@@ -316,8 +316,12 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({
                 type={showPassword ? 'text' : 'password'}
                 placeholder={
                   hasPasscodeSetup
-                    ? 'Enter your configured demo passcode'
-                    : 'Choose a demo passcode (min 6 chars) or generate below'
+                    ? language === 'ta'
+                      ? 'உங்கள் மாதிரி கடவுச்சொல்லை உள்ளிடவும்'
+                      : 'Enter your configured demo passcode'
+                    : language === 'ta'
+                      ? 'மாதிரி கடவுச்சொல் (குறைந்தது 6 எழுத்துகள்)'
+                      : 'Choose a demo passcode (min 6 chars) or generate below'
                 }
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -328,7 +332,15 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({
               <button
                 type="button"
                 onClick={() => setShowPassword((prev) => !prev)}
-                aria-label={showPassword ? 'Hide password' : 'Show password'}
+                aria-label={
+                  showPassword
+                    ? language === 'ta'
+                      ? 'கடவுச்சொல்லை மறைக்க'
+                      : 'Hide password'
+                    : language === 'ta'
+                      ? 'கடவுச்சொல்லைக் காட்ட'
+                      : 'Show password'
+                }
                 style={{
                   position: 'absolute',
                   right: '10px',

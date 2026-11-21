@@ -239,7 +239,7 @@ export const DonationModule: React.FC<DonationModuleProps> = ({
                   maxLength={10}
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
-                  placeholder="10-digit mobile number"
+                  placeholder={language === 'ta' ? '10 இலக்க அலைபேசி எண்' : '10-digit mobile number'}
                   className="form-input"
                 />
                 {errors.mobile && (
@@ -255,7 +255,7 @@ export const DonationModule: React.FC<DonationModuleProps> = ({
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@example.com"
+                  placeholder={language === 'ta' ? 'மின்னஞ்சல் முகவரி' : 'name@example.com'}
                   className="form-input"
                 />
                 {errors.email && (
@@ -352,7 +352,7 @@ export const DonationModule: React.FC<DonationModuleProps> = ({
                   min={1}
                   value={customAmount}
                   onChange={(e) => setCustomAmount(e.target.value)}
-                  placeholder="e.g. 2001"
+                  placeholder={language === 'ta' ? 'எ.கா. 2001' : 'e.g. 2001'}
                   className="form-input"
                 />
               </div>

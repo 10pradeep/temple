@@ -19,19 +19,26 @@ interface CalendarModuleProps {
 }
 
 const MONTH_NAMES = [
-  { eng: 'January', tamil: 'Margazhi / Thai' },
-  { eng: 'February', tamil: 'Thai / Masi' },
-  { eng: 'March', tamil: 'Masi / Panguni' },
-  { eng: 'April', tamil: 'Panguni / Chithirai' },
-  { eng: 'May', tamil: 'Chithirai / Vaikasi' },
-  { eng: 'June', tamil: 'Vaikasi / Aani' },
-  { eng: 'July', tamil: 'Aani / Aadi' },
-  { eng: 'August', tamil: 'Aadi / Aavani' },
-  { eng: 'September', tamil: 'Aavani / Purattasi' },
-  { eng: 'October', tamil: 'Purattasi / Aippasi' },
-  { eng: 'November', tamil: 'Aippasi / Karthigai' },
-  { eng: 'December', tamil: 'Karthigai / Margazhi' }
+  { eng: 'January', tamil: 'Margazhi / Thai', taMonth: 'ஜனவரி' },
+  { eng: 'February', tamil: 'Thai / Masi', taMonth: 'பிப்ரவரி' },
+  { eng: 'March', tamil: 'Masi / Panguni', taMonth: 'மார்ச்' },
+  { eng: 'April', tamil: 'Panguni / Chithirai', taMonth: 'ஏப்ரல்' },
+  { eng: 'May', tamil: 'Chithirai / Vaikasi', taMonth: 'மே' },
+  { eng: 'June', tamil: 'Vaikasi / Aani', taMonth: 'ஜூன்' },
+  { eng: 'July', tamil: 'Aani / Aadi', taMonth: 'ஜூலை' },
+  { eng: 'August', tamil: 'Aadi / Aavani', taMonth: 'ஆகஸ்ட்' },
+  { eng: 'September', tamil: 'Aavani / Purattasi', taMonth: 'செப்டம்பர்' },
+  { eng: 'October', tamil: 'Purattasi / Aippasi', taMonth: 'அக்டோபர்' },
+  { eng: 'November', tamil: 'Aippasi / Karthigai', taMonth: 'நவம்பர்' },
+  { eng: 'December', tamil: 'Karthigai / Margazhi', taMonth: 'டிசம்பர்' }
 ];
+
+const CATEGORY_NAMES_TA: Record<EventCategory, string> = {
+  festival: 'முக்கிய திருவிழா',
+  pooja: 'சிறப்பு பூசை',
+  regular: 'வழக்கமான நிகழ்வு',
+  important: 'முக்கிய விரதம் / அமாவாசை'
+};
 
 const YEARS = Array.from({ length: 10 }, (_, i) => 2026 + i); // 2026 to 2035
 
@@ -263,7 +270,7 @@ export const CalendarModule: React.FC<CalendarModuleProps> = ({
 
           <div style={{ textAlign: 'center', minWidth: '150px' }}>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--color-temple-brown)', fontFamily: 'var(--font-heading)' }}>
-              {MONTH_NAMES[selectedMonth].eng} {selectedYear}
+              {language === 'ta' ? MONTH_NAMES[selectedMonth].taMonth : MONTH_NAMES[selectedMonth].eng} {selectedYear}
             </h3>
             <p style={{ fontSize: '0.74rem', color: 'var(--color-text-secondary)', fontWeight: 700 }}>
               {MONTH_NAMES[selectedMonth].tamil}
@@ -274,7 +281,7 @@ export const CalendarModule: React.FC<CalendarModuleProps> = ({
             type="button"
             onClick={handleNextMonth}
             disabled={selectedYear === 2035 && selectedMonth === 11}
-            aria-label="Next Month"
+            aria-label={language === 'ta' ? 'அடுத்த மாதம்' : 'Next Month'}
             style={{
               width: '34px',
               height: '34px',
@@ -302,7 +309,7 @@ export const CalendarModule: React.FC<CalendarModuleProps> = ({
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
           <select
-            aria-label="Select Year"
+            aria-label={language === 'ta' ? 'ஆண்டைத் தேர்ந்தெடுக்க' : 'Select Year'}
             value={selectedYear}
             onChange={(e) => setSelectedYear(Number(e.target.value))}
             className="form-select"
@@ -316,7 +323,7 @@ export const CalendarModule: React.FC<CalendarModuleProps> = ({
           </select>
 
           <select
-            aria-label="Select Month"
+            aria-label={language === 'ta' ? 'மாதத்தைத் தேர்ந்தெடுக்க' : 'Select Month'}
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(Number(e.target.value))}
             className="form-select"
@@ -324,13 +331,13 @@ export const CalendarModule: React.FC<CalendarModuleProps> = ({
           >
             {MONTH_NAMES.map((m, idx) => (
               <option key={m.eng} value={idx}>
-                {m.eng} ({m.tamil})
+                {language === 'ta' ? `${m.taMonth} (${m.tamil})` : `${m.eng} (${m.tamil})`}
               </option>
             ))}
           </select>
 
           <select
-            aria-label="Filter Event Category"
+            aria-label={language === 'ta' ? 'நிகழ்வுப் பிரிவை வடிகட்டுக' : 'Filter Event Category'}
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
             className="form-select"
@@ -601,7 +608,7 @@ export const CalendarModule: React.FC<CalendarModuleProps> = ({
         }}
       >
         <h3 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--color-temple-brown)', marginBottom: '10px' }}>
-          {MONTH_NAMES[selectedMonth].eng} {selectedYear} —{' '}
+          {language === 'ta' ? MONTH_NAMES[selectedMonth].taMonth : MONTH_NAMES[selectedMonth].eng} {selectedYear} —{' '}
           {language === 'ta' ? `மாத நிகழ்வுகள் (${monthEvents.length})` : `Events (${monthEvents.length})`}
         </h3>
         {monthEvents.length === 0 ? (
@@ -716,7 +723,7 @@ export const CalendarModule: React.FC<CalendarModuleProps> = ({
                     textTransform: 'uppercase'
                   }}
                 >
-                  {selectedEvent.category} • {selectedEvent.tamilDate}
+                  {language === 'ta' ? CATEGORY_NAMES_TA[selectedEvent.category] || selectedEvent.category : selectedEvent.category} • {selectedEvent.tamilDate}
                 </span>
                 <h3
                   style={{

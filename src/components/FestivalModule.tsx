@@ -25,6 +25,22 @@ const TAMIL_MONTHS = [
   'Panguni'
 ];
 
+const TAMIL_MONTHS_MAP: Record<string, string> = {
+  All: 'அனைத்து மாதங்களும்',
+  Chithirai: 'சித்திரை',
+  Vaikasi: 'வைகாசி',
+  Aani: 'ஆனி',
+  Aadi: 'ஆடி',
+  Aavani: 'ஆவணி',
+  Purattasi: 'புரட்டாசி',
+  Aippasi: 'ஐப்பசி',
+  Karthigai: 'கார்த்திகை',
+  Margazhi: 'மார்கழி',
+  Thai: 'தை',
+  Maasi: 'மாசி',
+  Panguni: 'பங்குனி'
+};
+
 export const FestivalModule: React.FC<FestivalModuleProps> = ({
   festivals,
   onNavigate,
@@ -167,7 +183,11 @@ export const FestivalModule: React.FC<FestivalModuleProps> = ({
           >
             {TAMIL_MONTHS.map((m) => (
               <option key={m} value={m}>
-                {m === 'All' ? t.festAllMonths : `${m} Month`}
+                {m === 'All'
+                  ? t.festAllMonths
+                  : language === 'ta'
+                    ? `${TAMIL_MONTHS_MAP[m] || m} மாதம்`
+                    : `${m} Month`}
               </option>
             ))}
           </select>

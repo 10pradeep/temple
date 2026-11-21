@@ -141,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
 
               <div style={{ fontSize: '0.78rem', color: '#FFF2DF', lineHeight: 1.45 }}>
-                Developed By:{' '}
+                {language === 'ta' ? 'உருவாக்கியவர்:' : 'Developed By:'}{' '}
                 <span style={{ color: '#FFD54F', fontWeight: 700, letterSpacing: '0.2px' }}>
                   Pradeep Krishnan
                 </span>

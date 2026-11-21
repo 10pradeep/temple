@@ -9,6 +9,38 @@ interface AboutModuleProps {
   language: Language;
 }
 
+const TAMIL_HISTORY = [
+  'இந்த ஆலயம் S. Parraipatty மற்றும் அதைச் சுற்றியுள்ள பகுதிகளில் வாழும் மக்களின் இதயங்களில் ஒரு சிறப்பான இடத்தைப் பெற்றுள்ளது. இந்தப் புனிதத் தலத்துடன் தொடர்புடைய மகத்தான ஆன்மிகப் பெருமகனான மௌன குருநாதர், மனிதநேயம், கருணை மற்றும் தன்னலமற்ற சேவைக்காக தலைமுறை தலைமுறையாக மக்களால் நினைவுகூரப்பட்டு மதிக்கப்படுகிறார்.',
+  'பல பக்தர்களால் அவர் தெய்வீகக் காவலராகவும் அருளையும் ஆசீர்வாதங்களையும் வழங்குபவராகவும் போற்றப்படுகிறார். அவரது கருணை, அர்ப்பணிப்பு மற்றும் பங்களிப்புகள் இப்பகுதி மக்களின் வாழ்விலும் ஆன்மிக வளர்ச்சியிலும் நிலையான தாக்கத்தை ஏற்படுத்தியுள்ளன. இன்றும் மக்கள் அவரை ஆழ்ந்த மரியாதை, நன்றியுணர்வு மற்றும் பக்தியுடன் நினைவுகூருகின்றனர்.'
+];
+
+const TAMIL_SIGNIFICANCE = [
+  'மௌன சக்தி: மௌன குருநாதரை தியானிப்பது மன அமைதி, அடக்கம் மற்றும் ஆன்மீகத் தெளிவைத் தருகிறது.',
+  'திரிசூலம் & திருநீறு: பாதுகாப்பு, மங்கலகரம் மற்றும் அச்சமின்மையைக் குறிக்கும் புனித சின்னங்கள்.',
+  'மௌன குருநாதர் திருவருள்: மெய்யான அமைதி வழிபாட்டிற்கு மனமுவந்து அருளும் கருணைக் கடவுள்.'
+];
+
+const TAMIL_TRADITIONS = [
+  'கோயில் அலுவலகம் உறுதிப்படுத்தும் தினசரி சந்நிதி பூசை மற்றும் வழிபாட்டு முறை.',
+  'சந்நிதி முன் திருவிளக்கு (தீபம்) ஏற்றுதல் மற்றும் அமைதியான தியான வழிபாடு.',
+  'வெள்ளிக்கிழமை, பௌர்ணமி, அமாவாசை மற்றும் பிரதோஷ தினங்களில் சிறப்பு வழிபாடுகள்.',
+  'வருகை தரும் பக்தர்களுக்கு வழங்கப்படும் புனித அன்னதான சேவை.'
+];
+
+const TAMIL_ANNUAL_FESTIVALS = [
+  'சித்திரை தமிழ் புத்தாண்டு சிறப்பு வழிபாடு',
+  'ஆடி வெள்ளி & ஆடி மாத சிறப்பு வழிபாடு',
+  'நவராத்திரி & விஜயதசமி திருவிழா',
+  'கார்த்திகைத் தீபம்',
+  'தைப்பொங்கல் & தைப்பூசப் பெருவிழா',
+  'மகா சிவராத்திரி & பங்குனி உத்திரம்'
+];
+
+const TAMIL_HERITAGE = [
+  'இராஜகோபுரம், சந்நிதி சிற்ப வேலைப்பாடுகள், மண்டபத் தூண்கள் மற்றும் தல விருட்சம் பற்றிய விவரங்கள் நிர்வாக மையத்தில் புதுப்பிக்கப்படலாம்.',
+  'மௌன குருநாதர் சந்நிதி, இராஜகோபுரம், வருடாந்திர தேர் பவனி மற்றும் அன்னதான மண்டபத்தின் அசல் புகைப்படங்கள் இங்கு பாதுகாக்கப்படுகின்றன.'
+];
+
 export const AboutModule: React.FC<AboutModuleProps> = ({
   deityInfo,
   onNavigate,
@@ -145,7 +177,7 @@ export const AboutModule: React.FC<AboutModuleProps> = ({
           </h3>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.88rem', color: 'var(--color-text-main)', lineHeight: 1.6 }}>
-            {deityInfo.history.map((paragraph, idx) => (
+            {(language === 'ta' ? TAMIL_HISTORY : deityInfo.history).map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
           </div>
@@ -179,7 +211,7 @@ export const AboutModule: React.FC<AboutModuleProps> = ({
         </h3>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '14px' }}>
-          {deityInfo.spiritualSignificance.map((item, idx) => {
+          {(language === 'ta' ? TAMIL_SIGNIFICANCE : deityInfo.spiritualSignificance).map((item, idx) => {
             const [title, ...rest] = item.split(':');
             return (
               <div
@@ -225,7 +257,7 @@ export const AboutModule: React.FC<AboutModuleProps> = ({
             <span>{t.aboutTraditionsTitle}</span>
           </h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {deityInfo.traditions.map((trad, idx) => (
+            {(language === 'ta' ? TAMIL_TRADITIONS : deityInfo.traditions).map((trad, idx) => (
               <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.85rem', color: 'var(--color-text-main)', lineHeight: 1.45 }}>
                 <span style={{ color: 'var(--color-temple-brown)', fontWeight: 800 }}>✦</span>
                 <span>{trad}</span>
@@ -247,7 +279,7 @@ export const AboutModule: React.FC<AboutModuleProps> = ({
             <span>{t.aboutAnnualTitle}</span>
           </h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {deityInfo.annualFestivals.map((fest, idx) => (
+            {(language === 'ta' ? TAMIL_ANNUAL_FESTIVALS : deityInfo.annualFestivals).map((fest, idx) => (
               <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.85rem', color: 'var(--color-text-main)', lineHeight: 1.45 }}>
                 <span style={{ color: 'var(--color-temple-brown)', fontWeight: 800 }}>❖</span>
                 <span>{fest}</span>
@@ -272,7 +304,7 @@ export const AboutModule: React.FC<AboutModuleProps> = ({
           <span>{t.aboutHeritageTitle}</span>
         </h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'var(--color-text-main)', lineHeight: 1.6 }}>
-          {deityInfo.heritage.map((h, idx) => (
+          {(language === 'ta' ? TAMIL_HERITAGE : deityInfo.heritage).map((h, idx) => (
             <p key={idx}>{h}</p>
           ))}
         </div>

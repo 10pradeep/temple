@@ -300,7 +300,7 @@ export const Header: React.FC<HeaderProps> = ({
                   }}
                   title="English"
                 >
-                  ENG
+                  English
                 </button>
               </div>
 
@@ -704,7 +704,7 @@ export const Header: React.FC<HeaderProps> = ({
                   border: '1.5px solid var(--color-border-gold)'
                 }}
               >
-                ENG
+                English
               </button>
             </div>
           </div>

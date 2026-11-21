@@ -537,7 +537,7 @@ export const translations: Record<Language, Translations> = {
     adminLogin: 'நிர்வாக பலகை',
     adminDashboard: 'நிர்வாக கட்டுப்பாட்டு மையம்',
     templeHelpDesk: 'தொடர்பு & உதவி மையம்',
-    switchLang: 'ENG',
+    switchLang: 'English',
     otherLangName: 'English',
 
     heroLiveBadgeLive: 'நேரலை ஒளிபரப்பு இயக்கத்தில்',
@@ -551,7 +551,7 @@ export const translations: Record<Language, Translations> = {
     cardCalendarBadge: '2026–2035',
     cardDarisanamTitle: 'தரிசனம் முன்பதிவு',
     cardDarisanamSub: '7 நாள் தரிசன நேரப் பதிவு, இருக்கை விவரம் மற்றும் கோரிக்கை',
-    cardDarisanamBadge: '7 நாட்கள்',
+    cardDarisanamBadge: '7 நாள் முன்பதிவு',
     cardDonationTitle: 'நன்கொடை வழங்க',
     cardDonationSub: '₹100, ₹251, ₹501, ₹1,001 அல்லது விருப்பத் தொகை காணிக்கை',
     cardDonationBadge: 'மாதிரி சேவை',

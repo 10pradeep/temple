@@ -40,7 +40,7 @@ const TEMPLE_HISTORY_CONTENT: Record<Language, TempleHistoryCopy> = {
 };
 
 export const DeityDetailsSection: React.FC<DeityDetailsSectionProps> = ({
-  language = 'en'
+  language = 'ta'
 }) => {
   const [showHistory, setShowHistory] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
