@@ -152,9 +152,9 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
 
               <div style={{ fontSize: '0.78rem', color: '#FFF2DF', lineHeight: 1.45 }}>
-                {t.footerMentor}{' '}
+                {t.footerIdeaContributor}{' '}
                 <span style={{ color: '#FFD54F', fontWeight: 700, letterSpacing: '0.2px' }}>
-                  AnanhaKumar Jayarajan
+                  {t.footerIdeaContributorName}
                 </span>
               </div>
 

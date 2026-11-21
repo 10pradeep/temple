@@ -83,7 +83,8 @@ export interface Translations {
   footerPrivacy: string;
   footerTerms: string;
   footerDevelopedBy: string;
-  footerMentor: string;
+  footerIdeaContributor: string;
+  footerIdeaContributorName: string;
   footerDevelopedCreatedBy: string;
   footerWorkInProgress: string;
 
@@ -340,7 +341,8 @@ export const translations: Record<Language, Translations> = {
     footerPrivacy: 'Privacy Policy',
     footerTerms: 'Terms and Conditions',
     footerDevelopedBy: 'Developed By:',
-    footerMentor: 'Mentor:',
+    footerIdeaContributor: 'Website Idea Contributor:',
+    footerIdeaContributorName: 'Anand Kumar Jayarajan',
     footerDevelopedCreatedBy: 'Developed & Created by:',
     footerWorkInProgress: 'Work in progress. Share your data sources to help us expand—contact us',
 
@@ -596,7 +598,8 @@ export const translations: Record<Language, Translations> = {
     footerPrivacy: 'தனியுரிமைக் கொள்கை',
     footerTerms: 'விதிமுறைகள் மற்றும் நிபந்தனைகள்',
     footerDevelopedBy: 'உருவாக்கியவர்:',
-    footerMentor: 'வழிகாட்டி:',
+    footerIdeaContributor: 'இணையதளக் கருத்துப் பங்களிப்பாளர்:',
+    footerIdeaContributorName: 'ஆனந்தகுமார் ஜெயராஜன்',
     footerDevelopedCreatedBy: 'உருவாக்கம் மற்றும் மேம்பாடு:',
     footerWorkInProgress:
       'பணிகள் நடைபெற்று வருகின்றன. எங்கள் சேவையை விரிவுபடுத்த உங்கள் தரவு ஆதாரங்களைப் பகிருங்கள் — எங்களைத் தொடர்புகொள்ளுங்கள்.',
