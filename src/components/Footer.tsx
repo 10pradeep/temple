@@ -119,11 +119,22 @@ export const Footer: React.FC<FooterProps> = ({
                 </span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Phone size={16} color="#FFD54F" style={{ flexShrink: 0 }} />
-                <span style={{ color: '#FFE9A8', fontWeight: 700 }}>
-                  {locationConfig.phone} {t.footerOfficialOffice}
-                </span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                <Phone size={16} color="#FFD54F" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 14px' }}>
+                  <a
+                    href="tel:+919789218701"
+                    className="footer-tel-link"
+                  >
+                    +91 9789218701
+                  </a>
+                  <a
+                    href="tel:+919787790099"
+                    className="footer-tel-link"
+                  >
+                    +91 97877 90099
+                  </a>
+                </div>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -141,10 +152,14 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
 
               <div style={{ fontSize: '0.78rem', color: '#FFF2DF', lineHeight: 1.45 }}>
-                {language === 'ta' ? 'உருவாக்கியவர்:' : 'Developed By:'}{' '}
+                {t.footerDevelopedBy}{' '}
                 <span style={{ color: '#FFD54F', fontWeight: 700, letterSpacing: '0.2px' }}>
-                  Pradeep Krishnan
+                  MG NEXA SOLUTIONS
                 </span>
+              </div>
+
+              <div style={{ fontSize: '0.74rem', color: '#FFE9A8', fontWeight: 600, letterSpacing: '0.2px', lineHeight: 1.4 }}>
+                ANANHAKUMAR JAYARAJAN, PRADEEP KRISHNAN
               </div>
             </div>
           </div>
@@ -172,40 +187,45 @@ export const Footer: React.FC<FooterProps> = ({
             </span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-            <button
-              type="button"
-              onClick={() => onNavigate('privacy')}
-              style={{ color: '#FFE9A8', fontSize: '0.8rem', fontWeight: 700, textDecoration: 'underline' }}
-            >
-              {t.footerPrivacy}
-            </button>
-            <button
-              type="button"
-              onClick={() => onNavigate('terms')}
-              style={{ color: '#FFE9A8', fontSize: '0.8rem', fontWeight: 700, textDecoration: 'underline' }}
-            >
-              {t.footerTerms}
-            </button>
-            <button
-              type="button"
-              onClick={scrollToTop}
-              aria-label="Scroll to top"
-              title="Back to top"
-              style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(255, 213, 79, 0.25)',
-                border: '1.5px solid #FFD54F',
-                color: '#FFFFFF',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              <ArrowUp size={18} />
-            </button>
+          <div className="footer-bottom-meta">
+            <p style={{ margin: 0, fontSize: '0.76rem', color: '#FFE9A8', lineHeight: 1.45 }}>
+              {t.footerWorkInProgress}
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+              <button
+                type="button"
+                onClick={() => onNavigate('privacy')}
+                style={{ color: '#FFE9A8', fontSize: '0.8rem', fontWeight: 700, textDecoration: 'underline' }}
+              >
+                {t.footerPrivacy}
+              </button>
+              <button
+                type="button"
+                onClick={() => onNavigate('terms')}
+                style={{ color: '#FFE9A8', fontSize: '0.8rem', fontWeight: 700, textDecoration: 'underline' }}
+              >
+                {t.footerTerms}
+              </button>
+              <button
+                type="button"
+                onClick={scrollToTop}
+                aria-label={language === 'ta' ? 'மேலே செல்ல' : 'Scroll to top'}
+                title={language === 'ta' ? 'மேலே செல்ல' : 'Back to top'}
+                style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(255, 213, 79, 0.25)',
+                  border: '1.5px solid #FFD54F',
+                  color: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <ArrowUp size={18} />
+              </button>
+            </div>
           </div>
         </div>
       </div>

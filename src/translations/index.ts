@@ -82,6 +82,8 @@ export interface Translations {
   footerCopyright: string;
   footerPrivacy: string;
   footerTerms: string;
+  footerDevelopedBy: string;
+  footerWorkInProgress: string;
 
   // Calendar Module
   calPanchangamBadge: string;
@@ -335,6 +337,8 @@ export const translations: Record<Language, Translations> = {
     footerCopyright: 'Mouna Gurunathar Temple. All Rights Reserved.',
     footerPrivacy: 'Privacy Policy',
     footerTerms: 'Terms and Conditions',
+    footerDevelopedBy: 'Developed By:',
+    footerWorkInProgress: 'Work in progress. Share your data sources to help us expand—contact us',
 
     calPanchangamBadge: '2026 – 2035 TEMPLE CALENDAR',
     calTitle: 'Mouna Gurunathar Temple Calendar',
@@ -587,6 +591,9 @@ export const translations: Record<Language, Translations> = {
     footerCopyright: 'மௌன குருநாதர் திருக்கோயில். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
     footerPrivacy: 'தனியுரிமைக் கொள்கை',
     footerTerms: 'விதிமுறைகள் மற்றும் நிபந்தனைகள்',
+    footerDevelopedBy: 'உருவாக்கியவர்:',
+    footerWorkInProgress:
+      'பணிகள் நடைபெற்று வருகின்றன. எங்கள் சேவையை விரிவுபடுத்த உங்கள் தரவு ஆதாரங்களைப் பகிருங்கள் — எங்களைத் தொடர்புகொள்ளுங்கள்.',
 
     calPanchangamBadge: '2026 – 2035 கோயில் நாள்காட்டி',
     calTitle: 'மௌன குருநாதர் திருக்கோயில் நாள்காட்டி',

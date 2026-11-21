@@ -40,6 +40,34 @@
   color: #FFD54F;
 }
 
+.footer-tel-link {
+  color: #FFE9A8;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.18s ease, text-decoration 0.18s ease;
+}
+
+.footer-tel-link:hover {
+  color: #FFD54F;
+  text-decoration: underline;
+}
+
+.footer-bottom-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-meta {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
 /* Mouna Gurunathar Temple Hero Section (DeityDetailsSection) */
 .deity-hero-grid {
   display: grid;
